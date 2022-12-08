@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletRequestWrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
@@ -20,8 +21,9 @@ import java.util.Vector;
 /**
  * 请求过滤器，自定义请求
  */
-@WebFilter(urlPatterns = "/user/**")
-@Component
+//@Order(1)
+//@WebFilter(urlPatterns = "/user/**")
+//@Component
 public class RequestFilter extends GenericFilter {
 
     private static final Logger logger = LoggerFactory.getLogger(RequestFilter.class);
