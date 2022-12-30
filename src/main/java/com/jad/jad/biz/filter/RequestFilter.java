@@ -21,22 +21,21 @@ import java.util.Vector;
 /**
  * 请求过滤器，自定义请求
  */
-//@Order(1)
-//@WebFilter(urlPatterns = "/user/**")
-//@Component
+@Order(1)
+@WebFilter(urlPatterns = "/user/**")
+@Component
 public class RequestFilter extends GenericFilter {
 
     private static final Logger logger = LoggerFactory.getLogger(RequestFilter.class);
 
-    private static final StopWatch sw = new StopWatch();
-
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        // StopWatch只能在方法内部定义，如果在外部定义，则可能出现异常情况。
+        StopWatch sw = new StopWatch();
         sw.start();
         logger.info("start exec request convert, ");
         // request --> MyRequest
         MyRequestWrapper myRequest = new MyRequestWrapper((HttpServletRequest) request);
-
 
         sw.stop();
         logger.info("stop exec request convert, use time {}ms", sw.getTotalTimeMillis());

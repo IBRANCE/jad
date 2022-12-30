@@ -1,0 +1,18 @@
+###
+GET http://localhost:8080/thread/safe/01
+###
+GET http://localhost:8080/thread/safe/0
+###
+GET http://localhost:8080/thread/safe/01
+###
+GET http://localhost:8080/thread/safe/01
+###
+GET http://localhost:8080/thread/safe/01
+###
+GET http://localhost:8080/thread/safe/01
+###
+GET http://localhost:8080/thread/safe/01
+###
+GET http://localhost:8080/thread/safe/01
+###
+GET http://localhost:8080/thread/safe/01

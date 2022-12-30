@@ -107,5 +107,13 @@ public class CompletableFutureTest {
         });
     }
 
+    public void test03() {
+        CompletableFuture.allOf(CompletableFuture.runAsync(() -> {
+
+        }),CompletableFuture.runAsync(() -> {
+
+        })).join();
+    }
+
 
 }
